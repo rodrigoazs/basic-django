@@ -1,0 +1,9 @@
+sudo docker-compose up --build --force-recreate
+
+sudo docker-compose run web django-admin startproject composeexample .
+
+sudo docker exec -it analytics_web_1 python manage.py startapp products
+
+https://bezkoder.com/django-react-axios-rest-framework/
+
+https://docs.docker.com/samples/django/
