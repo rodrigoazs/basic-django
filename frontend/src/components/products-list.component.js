@@ -67,8 +67,8 @@ class ProductsList extends Component {
     const { products } = this.props;
 
     return (
-      <div className="list row">
-        <div className="col-md-8">
+      <div>
+        <div>
           <div className="input-group mb-3">
             <input
               type="text"
@@ -88,61 +88,63 @@ class ProductsList extends Component {
             </div>
           </div>
         </div>
-        <div className="col-md-6">
-          <h4>Products List</h4>
+        <div className="list row">
+          <div className="col-md-6">
+            <h4>Products List</h4>
 
-          <ul className="list-group">
-            {products &&
-              products.map((product, index) => (
-                <li
-                  className={
-                    "list-group-item " +
-                    (index === currentIndex ? "active" : "")
-                  }
-                  onClick={() => this.setActiveProduct(product, index)}
-                  key={index}
+            <ul className="list-group">
+              {products &&
+                products.map((product, index) => (
+                  <li
+                    className={
+                      "list-group-item " +
+                      (index === currentIndex ? "active" : "")
+                    }
+                    onClick={() => this.setActiveProduct(product, index)}
+                    key={index}
+                  >
+                    {product.title}
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div className="col-md-6">
+            {currentProduct ? (
+              <div>
+                <h4>Product</h4>
+                <div>
+                  <label>
+                    <strong>Title:</strong>
+                  </label>{" "}
+                  {currentProduct.title}
+                </div>
+                <div>
+                  <label>
+                    <strong>Description:</strong>
+                  </label>{" "}
+                  {currentProduct.description}
+                </div>
+                <div>
+                  <label>
+                    <strong>Status:</strong>
+                  </label>{" "}
+                  {currentProduct.published ? "Published" : "Pending"}
+                </div>
+
+                <Link
+                  to={"/products/" + currentProduct.id}
+                  className="badge badge-warning"
                 >
-                  {product.title}
-                </li>
-              ))}
-          </ul>
-        </div>
-        <div className="col-md-6">
-          {currentProduct ? (
-            <div>
-              <h4>Product</h4>
-              <div>
-                <label>
-                  <strong>Title:</strong>
-                </label>{" "}
-                {currentProduct.title}
+                  Edit
+                </Link>
               </div>
+            ) : (
               <div>
-                <label>
-                  <strong>Description:</strong>
-                </label>{" "}
-                {currentProduct.description}
+                <br />
+                <p>Please click on a Product...</p>
               </div>
-              <div>
-                <label>
-                  <strong>Status:</strong>
-                </label>{" "}
-                {currentProduct.published ? "Published" : "Pending"}
-              </div>
-
-              <Link
-                to={"/products/" + currentProduct.id}
-                className="badge badge-warning"
-              >
-                Edit
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <br />
-              <p>Please click on a Product...</p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     );
