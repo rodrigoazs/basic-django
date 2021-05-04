@@ -97,7 +97,7 @@ class Product extends Component {
       .updateProduct(this.state.currentProduct.id, this.state.currentProduct)
       .then((reponse) => {
         console.log(reponse);
-        
+
         this.setState({ message: "The product was updated successfully!" });
       })
       .catch((e) => {

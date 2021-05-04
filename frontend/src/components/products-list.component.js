@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  retrieveProducts,
-  findProductsByTitle,
-} from "../actions/products";
+import { retrieveProducts, findProductsByTitle } from "../actions/products";
 import { Link } from "react-router-dom";
 
 class ProductsList extends Component {
