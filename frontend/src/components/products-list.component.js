@@ -133,7 +133,7 @@ class ProductsList extends Component {
 
                 <Link
                   to={"/products/" + currentProduct.id}
-                  className="badge badge-warning"
+                  className="btn btn-outline-warning"
                 >
                   Edit
                 </Link>

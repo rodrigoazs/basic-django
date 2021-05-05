@@ -156,14 +156,14 @@ class Product extends Component {
 
             {currentProduct.published ? (
               <button
-                className="badge badge-primary mr-2"
+                className="btn btn-outline-primary"
                 onClick={() => this.updateStatus(false)}
               >
                 UnPublish
               </button>
             ) : (
               <button
-                className="badge badge-primary mr-2"
+                className="btn btn-outline-primary"
                 onClick={() => this.updateStatus(true)}
               >
                 Publish
@@ -171,7 +171,7 @@ class Product extends Component {
             )}
 
             <button
-              className="badge badge-danger mr-2"
+              className="btn btn-outline-danger"
               onClick={this.removeProduct}
             >
               Delete
@@ -179,7 +179,7 @@ class Product extends Component {
 
             <button
               type="submit"
-              className="badge badge-success"
+              className="btn btn-outline-success"
               onClick={this.updateContent}
             >
               Update
